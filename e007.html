@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+        div#res {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="res">Resultado</div>
+
+    <script>
+        
+        function somar (){
+            // esse elementos servem para resgatar os dados que o usuario vai passar nos inputs do html e salvar em uma variavel dentro do function
+            var tn1 = window.document.getElementById("txtn1");
+            var tn2 = window.document.querySelector("input#txtn2");
+            var res = window.document.getElementById("res");
+            // aqui vai pegar o valor das variaveis e transformar em numeros, pois eles vem como texto
+            var n1 = Number(tn1.value);
+            var n2 = Number(tn2.value);
+            // agora a soma dos dois numeros
+            var s = n1 + n2;
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a ${s}` // a crase serve para conseguir concatenar o texto com as variaveis
+        }
+
+    </script>
+</body>
+</html>
